@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!-- Jane Li -->
+<html>
+	<head>
+		<link rel = "icon" href = "icon.ico.png" />
+		<title>GLaDOS</title>
+		<style>
+		@font-face
+		{
+			font-family: portalFont;
+			src: url(portal.ttf);
+		}
+		img
+		{
+			top:0px;
+			left: 0px;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+		}
+		body
+		{
+			background-color: #1B2024;
+			background-image: url("imgs/GladosBack.jpg");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+		ul
+		{
+			z-index: 2;
+			display: table;
+			position: fixed;
+			top: 0pt;
+			left: -20pt;
+			width: 100%;
+			height: 40pt;
+			color: white;
+			float: left;
+			text-align: justify;
+			border-style: none;
+			background-color: white; 
+		}
+		ul li
+		{
+			display:table-cell;
+			z-index: 2;
+			padding: 1pt 10pt 1pt 10pt;
+			float: left;
+			
+			line-height: 40pt;
+			text-align: center;
+			list-style-type: none;
+		}
+		a
+		{
+			text-decoration: none;
+			font-size: 20pt;
+			font-family: portalFont;
+		}
+		li:hover 
+		{
+			border-color: #4A4646;
+			background-color: #4A4646;
+		}
+		
+		h1
+		{
+			color: #D1CFC9;
+			font-size: 100pt;
+			margin-top: 80pt;
+			font-family: portalFont;
+		}
+		#icon
+		{
+			display: inline-block;
+			
+			text-align: left;
+
+		}
+		div.icon > img
+		{
+			border: 1pt solid rgba(26, 8, 8, 0.63);
+			position: relative;
+			width: 40pt;
+			height: 40pt;
+		}
+		div.blogbox
+		{
+			background: rgba(252, 247, 247, 0.53);
+
+			width: 50%;
+			margin: 0 auto ;
+			padding: 10pt;
+			position: inline;
+			font-family: portalFont;
+			font-size: 20pt;
+			border: 2pt solid rgba(26, 8, 8, 0.32);
+			margin-bottom: 50pt;
+		}
+		li.dropdown
+		{
+			position: relative;
+
+		}
+		div.ddcontent
+		{
+			position: absolute;
+			display: none;
+			text-align: center;
+			width: 160pt;
+			top: 45pt;
+
+
+		}
+		#CCDD
+		{
+			background-color: #ff80c0;
+			left: 183pt;
+			box-shadow: rgba(255, 128, 197, 0.59);
+		}
+		#GDD
+		{
+			background-color: #D1CFC9;
+			left: 344pt;
+
+		}
+		#WDD
+		{
+			background-color: #53B3F7;
+			left: 430pt;
+		}
+		#CDD
+		{
+			background-color: #EE6D2C;
+			left: 527pt;
+		}
+		#glados
+		{
+			color: #807E7E;
+		}
+		#glados:hover
+		{
+			color: #D1CFC9;
+		}
+		</style>
+		<script>
+			function start()
+			{
+				title = "GLaD0S";
+				printText(title, "TITLE");
+			}
+			function dropdownDisplay(ID)
+			{
+				document.getElementById(ID).style.display = "inline-block";
+			}
+			function dropdownOut(ID)
+			{
+				document.getElementById(ID).style.display = "none";
+			}
+			function printText(text, ID)
+			{
+				textElement = document.getElementById(ID);
+				for(i = 0; i < text.length; i++)
+				{
+					setTimeout(function()
+					{
+						textElement.innerHTML += text.charAt(0);
+						text = text.substring(1);
+					}, i * 200);	
+				}	
+			}
+		</script>
+		
+	</head>
+	
+	<body onload = "start();">
+		<h1 id = "TITLE"></h1>
+		<ul style = "margin: 0pt;">
+			<li style = "padding: 0pt; margin: 0pt;height: 50px; width: 190px;margin-right: 10pt; ">
+				<a href = "index.html" > <img src = "imgs/logo.jpg" style = "width: 190px; height: 59.45px; padding-left: 13px" href = "index.html"/> </a>
+			</li>
+			<li onmouseover = "dropdownDisplay('CCDD');" onmouseout = "dropdownOut('CCDD')">
+				<div class = "dropdown">
+				<a href = "#" style = "color: #ff80c0" > Companion Cube </a>
+					<div id = "CCDD" class ="ddcontent" onmouseout = "dropdownOut('CCDD')">
+						<a href = "companionCubePage.html" style = "color: #363535"> Blog</a>
+						<br />
+						<a href = "http://theportalwiki.com/wiki/Weighted_Companion_Cube" style = "color: #363535" target = "_blank"> Wiki </a>
+					</div>	
+				</div>
+			</li>
+			<li onmouseover = "dropdownDisplay('GDD');" onmouseout = "dropdownOut('GDD')">
+				<div class = "dropdown">
+				<a id = "glados" href = "#"> GLaD0S</a>
+					<div id = "GDD" class ="ddcontent" onmouseout = "dropdownOut('GDD')">
+						<a href = "gladosPage.html" style = "color: #363535"> Blog</a>
+						<br />
+						<a href = "http://theportalwiki.com/wiki/GladOS" style = "color: #363535" target = "_blank"> Wiki </a>
+					</div>
+				</div>
+			</li>
+			<li onmouseover = "dropdownDisplay('WDD');" onmouseout = "dropdownOut('WDD')">
+				<div class = "dropdown">
+				<a href = "#" style = "color: #53B3F7" > Wheatley </a>
+					<div id = "WDD" class ="ddcontent" onmouseout = "dropdownOut('WDD')">
+						<a href = "WheatleyPage.html" style = "color: #363535"> Blog</a>
+						<br />
+						<a href = "http://theportalwiki.com/wiki/Wheatley" style = "color: #363535" target = "_blank"> Wiki </a>
+					</div>	
+				</div>
+			</li>
+			<li onmouseover = "dropdownDisplay('CDD');"onmouseout = "dropdownOut('CDD')">
+				<div class = "dropdown">
+				<a href = "#" style = "color: #EE6D2C" > Chell </a>
+					<div id = "CDD" class ="ddcontent" onmouseout = "dropdownOut('CDD')">
+						<a href = "ChellPage.html" style = "color: #363535"> Blog</a>
+						<br />
+						<a href = "http://theportalwiki.com/wiki/Chell" style = "color: #363535" target = "_blank"> Wiki </a>
+					</div>	
+				</div>
+			</li>
+		</ul>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			I just tested some of the deadly neurotoxin on the scientists. I'm pretty sure all of them died but I keep hearing steps, screaming and I see some scribbles on the walls... It's probably just a turret.  
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			I saw this log somewhere on the Aperture's old servers.  I just tested some of the deadly neurotoxin on the scientists. Those scientist were so easy to fool.  I've erased some of the old content and did some remodeling.
+
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			This new mute test subject is doing very well.  They all seem to be motivated by a cake.  0ne of these times they'll be so fat that they'll jump, and just drop like a stone. Into acid, probably. Like a potato into a deep fat fryer.
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			The Aperture Science Handheld Portal Device is now more valuable than the organs and combined incomes of everyone in any test subject's hometown.  It seems a little risky giving these puny humans valuable equipment.  
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			This test subject has escaped.  She seems smarter than the others and she still has the portal gun.  This abnormally stubborn moron just will not give up. This may yield disasterous results.
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			Finally finished rebuilding myself after that mute lunatic destroyed me and Aperture.  The whole lab is such a mess.
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			0f course she's back.  At least it will be amusing to mess with her again.
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			That jumpsuit she's wearing looks stupid. That's not me talking, it's right here in her file. 0n other people it looks fine, but right here a scientist has noted that on her it looks "stupid". 
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			That moron she's with thinks he's so smart. I CAN hear him everywhere and he still tries to plot against me with her!
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			That metal ball she's with TURNED ME INT0 P0TAT0!!  Why am I still able to post in this potato body?  Great, now I have to rely on the lunatic who killed me to save me.
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/wheatleyIcon.jpg" /> Wheatley
+			</div>
+			You bet I turned you into a potato! Since I have full access to Aperture Science, I can see everything you have posted! N0W WH0'S THE M0R0N!
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			That voice, Mr. Johnson. I know him from somewhere... and Caroline, these names sound so familiar...
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			That Cave Johnson really knows what he's talking about! I'm going to MAKE that metal ball put me back into my body! And he'll probably kill me and Chell, because he's incredibly powerful and I have no plan.
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/wheatleyIcon.jpg" /> Wheatley
+			</div>
+			You will never get back into you old body!
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			GET 0FF MY BL0G Y0U M0R0N!
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			I can't believe my paradox idea didn't work! And it almost killed me.
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/wheatleyIcon.jpg" /> Wheatley
+			</div>
+			I'll be honest, I might have heard that one before, though. Sort of cheating.
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			It's a paradox! There IS no answer. And GET 0FF MY BL0G!
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			0h when I get out of here, I'll kill him. Crushing's too good for him. First he'll spend a year in the incinerator. Year two: Cryogenic refrigeration wing. Then TEN years in the chamber I built where all the robots scream at you. THEN I'll kill him.
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			In other news, I think I might not hate Chell as much as I used to before... Revenge brings people together.
+		</div>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			It's been fun, I hope Chell never comes back. Now I can work on the cooperative testing initiative to phase out human testing once and for all.
+		</div>
+	</body>
+</html>

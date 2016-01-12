@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!-- Jane Li -->
+<html>
+	<head>
+		<link rel = "icon" href = "icon.ico.png" />
+		<title>Companion Cube</title>
+		<style>
+		@font-face
+		{
+			font-family: portalFont;
+			src: url(portal.ttf);
+		}
+		img
+		{
+			top:0px;
+			left: 0px;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+		}
+		body
+		{
+			background-color: #DBCBBE;
+			background-image: url("CCubeBack.jpeg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		ul
+		{
+			z-index: 2;
+			display: table;
+			position: fixed;
+			top: 0pt;
+			left: -20pt;
+			width: 100%;
+			height: 40pt;
+			color: white;
+			float: left;
+			text-align: justify;
+			border-style: none;
+			background-color: white; 
+		}
+		ul li
+		{
+			display:table-cell;
+			z-index: 2;
+			padding: 1pt 10pt 1pt 10pt;
+			float: left;
+			
+			line-height: 40pt;
+			text-align: center;
+			list-style-type: none;
+		}
+		a
+		{
+			text-decoration: none;
+			font-size: 20pt;
+			font-family: portalFont;
+		}
+		li:hover 
+		{
+			border-color: #4A4646;
+			background-color: #4A4646;
+		}
+		h1
+		{
+			color: #ff80c0;
+			font-size: 100pt;
+			margin-top: 80pt;
+			font-family: portalFont;
+		}
+		#icon
+		{
+			display: inline-block;
+			
+			text-align: left;
+
+		}
+		div.icon > img
+		{
+			border: 1pt solid rgba(26, 8, 8, 0.63);
+			position: relative;
+			width: 40pt;
+			height: 40pt;
+		}
+		div.blogbox
+		{
+			background: rgba(252, 247, 247, 0.53);
+
+			width: 50%;
+			margin: 0 auto ;
+			padding: 10pt;
+			position: inline;
+			font-family: portalFont;
+			font-size: 20pt;
+			border: 2pt solid rgba(26, 8, 8, 0.32);
+		}
+		li.dropdown
+		{
+			position: relative;
+
+		}
+		div.ddcontent
+		{
+			position: absolute;
+			display: none;
+			text-align: center;
+			width: 160pt;
+			top: 45pt;
+
+
+		}
+		#CCDD
+		{
+			background-color: #ff80c0;
+			left: 183pt;
+			box-shadow: rgba(255, 128, 197, 0.59);
+		}
+		#GDD
+		{
+			background-color: #D1CFC9;
+			left: 344pt;
+
+		}
+		#WDD
+		{
+			background-color: #53B3F7;
+			left: 430pt;
+		}
+		#CDD
+		{
+			background-color: #EE6D2C;
+			left: 527pt;
+		}
+		#glados
+		{
+			color: #807E7E;
+		}
+		#glados:hover
+		{
+			color: #D1CFC9;
+		}
+		</style>
+		<script>
+			function start()
+			{
+				title = "Companion Cube";
+				printText(title, "TITLE");
+			}
+			function dropdownDisplay(ID)
+			{
+				document.getElementById(ID).style.display = "inline-block";
+			}
+			function dropdownOut(ID)
+			{
+				document.getElementById(ID).style.display = "none";
+			}
+			function printText(text, ID)
+			{
+				textElement = document.getElementById(ID);
+				for(i = 0; i < text.length; i++)
+				{
+					setTimeout(function()
+					{
+						textElement.innerHTML += text.charAt(0);
+						text = text.substring(1);
+					}, i * 100);	
+				}	
+			}
+		</script>
+		
+	</head>
+	
+	<body onload = "start();">
+		<h1 id = "TITLE"> </h1>
+		<ul style = "margin: 0pt;">
+			<li style = "padding: 0pt; margin: 0pt;height: 50px; width: 190px;margin-right: 10pt; ">
+				<a href = "index.html" > <img src = "imgs/logo.jpg" style = "width: 190px; height: 59.45px; padding-left: 13px" href = "index.html"/> </a>
+			</li>
+			<li onmouseover = "dropdownDisplay('CCDD');" onmouseout = "dropdownOut('CCDD')">
+				<div class = "dropdown">
+				<a href = "#" style = "color: #ff80c0" > Companion Cube </a>
+					<div id = "CCDD" class ="ddcontent" onmouseout = "dropdownOut('CCDD')">
+						<a href = "companionCubePage.html" style = "color: #363535"> Blog</a>
+						<br />
+						<a href = "http://theportalwiki.com/wiki/Weighted_Companion_Cube" style = "color: #363535" target = "_blank"> Wiki </a>
+					</div>	
+				</div>
+			</li>
+			<li onmouseover = "dropdownDisplay('GDD');" onmouseout = "dropdownOut('GDD')">
+				<div class = "dropdown">
+				<a id = "glados"  href = "#" > GLaD0S</a>
+					<div id = "GDD" class ="ddcontent" onmouseout = "dropdownOut('GDD')">
+						<a href = "gladosPage.html" style = "color: #363535"> Blog</a>
+						<br />
+						<a href = "http://theportalwiki.com/wiki/GladOS" style = "color: #363535" target = "_blank"> Wiki </a>
+					</div>
+				</div>
+			</li>
+			<li onmouseover = "dropdownDisplay('WDD');"onmouseout = "dropdownOut('WDD')">
+				<div class = "dropdown">
+				<a href = "#" style = "color: #53B3F7" > Wheatley </a>
+					<div id = "WDD" class ="ddcontent" onmouseout = "dropdownOut('WDD')">
+						<a href = "WheatleyPage.html" style = "color: #363535"> Blog</a>
+						<br />
+						<a href = "http://theportalwiki.com/wiki/Wheatley" style = "color: #363535" target = "_blank"> Wiki </a>
+					</div>	
+				</div>
+			</li>
+			<li onmouseover = "dropdownDisplay('CDD');" onmouseout = "dropdownOut('CDD')">
+				<div class = "dropdown">
+				<a href = "#" style = "color: #EE6D2C" > Chell </a>
+					<div id = "CDD" class ="ddcontent" onmouseout = "dropdownOut('CDD')">
+						<a href = "ChellPage.html" style = "color: #363535"> Blog</a>
+						<br />
+						<a href = "http://theportalwiki.com/wiki/Chell" style = "color: #363535" target = "_blank"> Wiki </a>
+					</div>	
+				</div>
+			</li>
+		</ul>
+		<div class = "blogbox">
+			<div class = "icon">
+				<img src = "imgs/gladosIcon.png" /> GLaD0S
+			</div>
+			The Enrichment Center reminds you that the Weighted Companion Cube will never threaten to stab you and, in fact, cannot speak.  This means there is no such blog for this character. Stupid human.
+		</div>
+	</body>
+</html>
